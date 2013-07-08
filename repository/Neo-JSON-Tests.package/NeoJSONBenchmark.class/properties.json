@@ -1,0 +1,15 @@
+{
+	"category" : "Neo-JSON-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SvenVanCaekenberghe 6/5/2012 09:48",
+	"instvars" : [
+		"objects",
+		"json" ],
+	"name" : "NeoJSONBenchmark",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

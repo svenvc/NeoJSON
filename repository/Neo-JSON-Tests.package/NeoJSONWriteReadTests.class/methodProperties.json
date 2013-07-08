@@ -1,0 +1,12 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"testFloats" : "SvenVanCaekenberghe 6/4/2012 15:51",
+		"testIntegers" : "SvenVanCaekenberghe 6/4/2012 15:46",
+		"testLists" : "SvenVanCaekenberghe 6/4/2012 15:51",
+		"testMaps" : "SvenVanCaekenberghe 6/4/2012 15:53",
+		"testObject1" : "SvenVanCaekenberghe 6/9/2012 18:48",
+		"testSpecials" : "SvenVanCaekenberghe 6/4/2012 15:46",
+		"testStrings" : "SvenVanCaekenberghe 6/10/2012 21:15",
+		"writeRead:" : "SvenVanCaekenberghe 6/4/2012 15:36" } }

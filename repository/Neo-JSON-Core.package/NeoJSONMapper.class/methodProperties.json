@@ -1,0 +1,14 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"for:customDo:" : "SvenVanCaekenberghe 6/13/2012 11:04",
+		"for:do:" : "SvenVanCaekenberghe 6/13/2012 11:04",
+		"mapAllInstVarsFor:" : "SvenVanCaekenberghe 6/13/2012 11:07",
+		"mapInstVarsFor:" : "SvenVanCaekenberghe 6/13/2012 11:06",
+		"mappingFor:" : "SvenVanCaekenberghe 6/12/2012 15:48",
+		"mappingFor:ifAbsent:" : "SvenVanCaekenberghe 6/9/2012 18:24",
+		"mappings" : "SvenVanCaekenberghe 6/7/2012 14:55",
+		"newCustomMappingFor:" : "SvenVanCaekenberghe 6/8/2012 21:12",
+		"newObjectMappingFor:" : "SvenVanCaekenberghe 6/8/2012 14:13",
+		"resolveMappingFor:" : "SvenVanCaekenberghe 6/9/2012 18:29" } }

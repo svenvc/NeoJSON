@@ -1,0 +1,3 @@
+accessing
+space
+	^ stream space

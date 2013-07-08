@@ -1,0 +1,15 @@
+{
+	"category" : "Neo-JSON-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"jsonWriter",
+		"first" ],
+	"name" : "NeoJSONStreamingWriter",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

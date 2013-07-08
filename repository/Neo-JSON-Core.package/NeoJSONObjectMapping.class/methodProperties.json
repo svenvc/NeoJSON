@@ -1,0 +1,20 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"initialize" : "SvenVanCaekenberghe 6/5/2012 22:50",
+		"mapAccessor:" : "SvenVanCaekenberghe 6/12/2012 13:13",
+		"mapAccessor:mutator:to:" : "SvenVanCaekenberghe 6/12/2012 13:12",
+		"mapAccessor:to:" : "SvenVanCaekenberghe 6/12/2012 13:13",
+		"mapAccessors:" : "SvenVanCaekenberghe 6/12/2012 13:14",
+		"mapAllInstVars" : "SvenVanCaekenberghe 6/6/2012 16:00",
+		"mapInstVar:" : "SvenVanCaekenberghe 6/9/2012 18:37",
+		"mapInstVar:to:" : "SvenVanCaekenberghe 6/9/2012 18:36",
+		"mapInstVars" : "SvenVanCaekenberghe 6/6/2012 15:59",
+		"mapInstVars:" : "SvenVanCaekenberghe 6/6/2012 16:00",
+		"mapProperty:getter:setter:" : "SvenVanCaekenberghe 6/9/2012 18:13",
+		"printOn:" : "SvenVanCaekenberghe 6/7/2012 15:30",
+		"propertyNamed:ifAbsent:" : "SvenVanCaekenberghe 6/7/2012 14:52",
+		"readFrom:" : "SvenVanCaekenberghe 6/8/2012 17:13",
+		"subjectClass:" : "SvenVanCaekenberghe 6/6/2012 15:32",
+		"writeObject:on:" : "SvenVanCaekenberghe 6/6/2012 14:55" } }

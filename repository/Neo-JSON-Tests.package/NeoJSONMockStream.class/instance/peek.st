@@ -1,0 +1,3 @@
+accessing
+peek
+	^ stream peek

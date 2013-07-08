@@ -1,0 +1,27 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"testArrayOfPoints" : "SvenVanCaekenberghe 6/12/2012 12:32",
+		"testAssociation" : "SvenVanCaekenberghe 6/12/2012 13:18",
+		"testBooleans" : "SvenVanCaekenberghe 6/13/2012 14:44",
+		"testByteArray" : "SvenVanCaekenberghe 6/12/2012 12:32",
+		"testDate" : "SvenVanCaekenberghe 6/12/2012 12:02",
+		"testDateAndTime" : "SvenVanCaekenberghe 6/12/2012 12:02",
+		"testFloats" : "SvenVanCaekenberghe 6/2/2012 21:49",
+		"testIntegers" : "SvenVanCaekenberghe 6/12/2012 16:08",
+		"testLists" : "SvenVanCaekenberghe 6/12/2012 16:16",
+		"testMaps" : "SvenVanCaekenberghe 6/12/2012 16:16",
+		"testNull" : "SvenVanCaekenberghe 6/13/2012 14:29",
+		"testOrderedCollection" : "SvenVanCaekenberghe 6/13/2012 10:18",
+		"testOrderedCollectionOfPoints" : "SvenVanCaekenberghe 6/12/2012 12:33",
+		"testParseErrors" : "SvenVanCaekenberghe 6/12/2012 16:01",
+		"testPoint" : "SvenVanCaekenberghe 6/12/2012 15:58",
+		"testPoint1" : "SvenVanCaekenberghe 6/8/2012 14:04",
+		"testPoint2" : "SvenVanCaekenberghe 6/7/2012 15:23",
+		"testPoint3" : "SvenVanCaekenberghe 6/8/2012 14:04",
+		"testPropertyNamesAsSymbols" : "SvenVanCaekenberghe 6/13/2012 10:00",
+		"testSmallDictionary" : "SvenVanCaekenberghe 6/13/2012 10:14",
+		"testStrings" : "SvenVanCaekenberghe 6/12/2012 16:04",
+		"testSymbol" : "SvenVanCaekenberghe 6/12/2012 12:02",
+		"testTime" : "SvenVanCaekenberghe 6/12/2012 12:02" } }

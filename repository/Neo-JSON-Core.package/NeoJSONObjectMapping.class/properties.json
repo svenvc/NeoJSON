@@ -1,0 +1,15 @@
+{
+	"category" : "Neo-JSON-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"subjectClass",
+		"properties" ],
+	"name" : "NeoJSONObjectMapping",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

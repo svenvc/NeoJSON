@@ -1,0 +1,13 @@
+{
+	"class" : {
+		"on:" : "SvenVanCaekenberghe 6/13/2012 16:25" },
+	"instance" : {
+		"atEnd" : "SvenVanCaekenberghe 6/13/2012 16:23",
+		"close" : "SvenVanCaekenberghe 6/13/2012 16:23",
+		"next" : "SvenVanCaekenberghe 6/13/2012 16:22",
+		"nextPut:" : "SvenVanCaekenberghe 6/13/2012 16:23",
+		"nextPutAll:" : "SvenVanCaekenberghe 6/13/2012 16:23",
+		"peek" : "SvenVanCaekenberghe 6/13/2012 16:22",
+		"peekFor:" : "SvenVanCaekenberghe 12/3/2012 10:53",
+		"space" : "SvenVanCaekenberghe 6/13/2012 16:23",
+		"stream:" : "SvenVanCaekenberghe 6/13/2012 16:22" } }

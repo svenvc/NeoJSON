@@ -1,0 +1,14 @@
+{
+	"category" : "Neo-JSON-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"stream" ],
+	"name" : "NeoJSONMockStream",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
