@@ -2,5 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
+		"testDictionaryOfObject2" : "SvenVanCaekenberghe 8/30/2013 11:05",
 		"testObject1" : "SvenVanCaekenberghe 6/9/2012 18:49",
+		"testObject2" : "SvenVanCaekenberghe 8/30/2013 11:05",
 		"writeRead:" : "SvenVanCaekenberghe 6/4/2012 15:45" } }

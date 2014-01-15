@@ -2,6 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
+		"testAsciiOnlyStrings" : "SvenVanCaekenberghe 9/3/2013 12:06",
 		"testAssociation" : "SvenVanCaekenberghe 6/12/2012 13:19",
 		"testBooleans" : "SvenVanCaekenberghe 6/3/2012 19:56",
 		"testByteArray" : "SvenVanCaekenberghe 6/8/2012 21:54",
