@@ -1,3 +1,5 @@
 writing
 writeObject: anObject on: jsonWriter
-	writer value: jsonWriter value: anObject
+	writer 
+		ifNil: [ anObject neoJsonOn: jsonWriter ]
+		ifNotNil: [ writer value: jsonWriter value: anObject ]

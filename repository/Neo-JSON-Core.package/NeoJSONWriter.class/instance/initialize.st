@@ -1,6 +1,7 @@
 initialize-release
 initialize
 	super initialize.
-	newLine := String cr.
-	prettyPrint := false.
+	self newLine: String cr.
+	self prettyPrint: false.
+	self asciiOnly: false.
 	level := 0

@@ -2,5 +2,5 @@ private
 newlineIndent
 	prettyPrint
 		ifTrue: [ 
-			writeStream nextPutAll: newLine.
+			self newline.
 			level timesRepeat: [ writeStream nextPut: Character tab ] ]

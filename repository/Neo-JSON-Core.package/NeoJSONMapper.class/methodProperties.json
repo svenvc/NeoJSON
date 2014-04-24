@@ -2,13 +2,13 @@
 	"class" : {
 		 },
 	"instance" : {
-		"for:customDo:" : "SvenVanCaekenberghe 6/13/2012 11:04",
-		"for:do:" : "SvenVanCaekenberghe 6/13/2012 11:04",
-		"mapAllInstVarsFor:" : "SvenVanCaekenberghe 6/13/2012 11:07",
-		"mapInstVarsFor:" : "SvenVanCaekenberghe 6/13/2012 11:06",
+		"customMappingFor:" : "SvenVanCaekenberghe 3/22/2014 10:57",
+		"for:customDo:" : "SvenVanCaekenberghe 3/22/2014 10:56",
+		"for:do:" : "SvenVanCaekenberghe 3/22/2014 10:57",
+		"mapAllInstVarsFor:" : "SvenVanCaekenberghe 3/22/2014 10:54",
+		"mapInstVarsFor:" : "SvenVanCaekenberghe 3/22/2014 10:54",
 		"mappingFor:" : "SvenVanCaekenberghe 6/12/2012 15:48",
 		"mappingFor:ifAbsent:" : "SvenVanCaekenberghe 6/9/2012 18:24",
 		"mappings" : "SvenVanCaekenberghe 6/7/2012 14:55",
-		"newCustomMappingFor:" : "SvenVanCaekenberghe 6/8/2012 21:12",
-		"newObjectMappingFor:" : "SvenVanCaekenberghe 6/8/2012 14:13",
+		"objectMappingFor:" : "SvenVanCaekenberghe 3/22/2014 10:54",
 		"resolveMappingFor:" : "SvenVanCaekenberghe 6/9/2012 18:29" } }

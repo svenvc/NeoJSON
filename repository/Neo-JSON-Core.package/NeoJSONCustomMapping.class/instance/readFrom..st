@@ -1,3 +1,5 @@
 parsing
 readFrom: jsonReader
-	^ reader value: jsonReader
+	^ reader 
+		ifNil: [ jsonReader next ]
+		ifNotNil: [ reader value: jsonReader ]

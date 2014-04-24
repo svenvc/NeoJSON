@@ -11,5 +11,5 @@
 	"name" : "NeoJSONObjectMapping",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "NeoJSONMapping",
 	"type" : "normal" }

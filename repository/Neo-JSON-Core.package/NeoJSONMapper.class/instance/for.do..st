@@ -1,9 +1,9 @@
 mapping
 for: smalltalkClass do: block
-	"Create and add a new standard object mapping for smalltalkClass.
-	The code in block should further customize the mapping."
+	"Execute the code in block to further customize the mapping for schemaName.
+	Create and add a new standard object mapping for schemaName if necessary."
 	
 	| mapping |
-	mapping := self newObjectMappingFor: smalltalkClass.
+	mapping := self objectMappingFor: smalltalkClass.
 	block value: mapping.
 	^ mapping

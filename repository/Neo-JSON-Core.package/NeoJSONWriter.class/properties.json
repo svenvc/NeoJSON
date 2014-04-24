@@ -9,7 +9,8 @@
 		"writeStream",
 		"prettyPrint",
 		"level",
-		"newLine" ],
+		"newLine",
+		"asciiOnly" ],
 	"name" : "NeoJSONWriter",
 	"pools" : [
 		 ],

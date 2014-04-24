@@ -12,5 +12,5 @@
 	"name" : "NeoJSONCustomMapping",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "NeoJSONMapping",
 	"type" : "normal" }

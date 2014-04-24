@@ -1,9 +1,9 @@
 mapping
 for: schemaName customDo: block
-	"Create and add a new custom mapping for schemaName.
-	The code in block should further customize the mapping."
+	"Execute the code in block to further customize the mapping for schemaName.
+	Create and add a new custom mapping for schemaName if necessary."
 	
 	| mapping |
-	mapping := self newCustomMappingFor: schemaName.
+	mapping := self customMappingFor: schemaName.
 	block value: mapping.
 	^ mapping
