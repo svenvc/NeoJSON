@@ -16,5 +16,4 @@ escapeChar: code
 		ifTrue: [ ^ writeStream nextPutAll: '\r' ].		
 	code = 9
 		ifTrue: [ ^ writeStream nextPutAll: '\t' ].		
-	writeStream nextPutAll: '\u'.
-	code printOn: writeStream base: 16 nDigits: 4
+	self escapeUnicode: code

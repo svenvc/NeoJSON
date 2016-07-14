@@ -4,7 +4,7 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "<historical>",
+	"commentStamp" : "SvenVanCaekenberghe 3/16/2016 11:23",
 	"instvars" : [
 		"readStream",
 		"stringStream",

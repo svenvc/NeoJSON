@@ -23,3 +23,7 @@ Here are some examples:
 		for: #ArrayOfPoints customDo: [ :mapping |
 			mapping listOfElementSchema: Point ];
 		nextAs: #ArrayOfPoints.
+
+	(NeoJSONReader on: '[ { "x" : 1, "y" : 2 }, { "x" : 3, "y" : 4 } ]' readStream)
+		mapInstVarsFor: Point;
+		nextListAs: Point.

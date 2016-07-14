@@ -1,4 +1,5 @@
 initialize-release
 initialize
 	super initialize.
-	properties := Dictionary new.
+	properties := OrderedCollection new.
+	allowNil := false

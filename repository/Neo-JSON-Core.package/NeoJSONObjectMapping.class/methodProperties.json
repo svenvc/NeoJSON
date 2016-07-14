@@ -2,8 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
+		"allowNil" : "SvenVanCaekenberghe 12/30/2015 11:44",
 		"identifier" : "SvenVanCaekenberghe 3/23/2014 19:25",
-		"initialize" : "SvenVanCaekenberghe 6/5/2012 22:50",
+		"initialize" : "SvenVanCaekenberghe 7/11/2016 10:54",
 		"mapAccessor:" : "SvenVanCaekenberghe 6/12/2012 13:13",
 		"mapAccessor:mutator:to:" : "SvenVanCaekenberghe 6/12/2012 13:12",
 		"mapAccessor:to:" : "SvenVanCaekenberghe 6/12/2012 13:13",
@@ -13,8 +14,8 @@
 		"mapInstVar:to:" : "SvenVanCaekenberghe 6/9/2012 18:36",
 		"mapInstVars" : "SvenVanCaekenberghe 6/6/2012 15:59",
 		"mapInstVars:" : "SvenVanCaekenberghe 6/6/2012 16:00",
-		"mapProperty:getter:setter:" : "SvenVanCaekenberghe 6/9/2012 18:13",
-		"propertyNamed:ifAbsent:" : "SvenVanCaekenberghe 6/7/2012 14:52",
-		"readFrom:" : "SvenVanCaekenberghe 6/8/2012 17:13",
+		"mapProperty:getter:setter:" : "SvenVanCaekenberghe 7/11/2016 11:01",
+		"propertyNamed:ifAbsent:" : "SvenVanCaekenberghe 7/11/2016 10:58",
+		"readFrom:" : "SvenVanCaekenberghe 12/30/2015 11:48",
 		"subjectClass:" : "SvenVanCaekenberghe 6/6/2012 15:32",
-		"writeObject:on:" : "SvenVanCaekenberghe 6/6/2012 14:55" } }
+		"writeObject:on:" : "SvenVanCaekenberghe 7/11/2016 10:54" } }

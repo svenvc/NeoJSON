@@ -10,7 +10,8 @@
 		"prettyPrint",
 		"level",
 		"newLine",
-		"asciiOnly" ],
+		"asciiOnly",
+		"writeNil" ],
 	"name" : "NeoJSONWriter",
 	"pools" : [
 		 ],

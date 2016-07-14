@@ -6,5 +6,6 @@ mapProperty: propertyName getter: readBlock setter: writeBlock
 		propertyName: propertyName;
 		getter: readBlock;
 		setter: writeBlock.
-	properties at: propertyName put: propertyMapping.
+	properties removeAllSuchThat: [ :each | each propertyName = propertyName ].
+	properties addLast: propertyMapping.
 	^ propertyMapping 

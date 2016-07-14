@@ -1,4 +1,4 @@
-parsing
+private
 parseCharacterHexDigit
 	| digit |
 	readStream atEnd 
