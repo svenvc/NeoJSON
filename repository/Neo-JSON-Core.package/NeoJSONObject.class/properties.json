@@ -1,0 +1,14 @@
+{
+	"category" : "Neo-JSON-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SvenVanCaekenberghe 9/8/2014 13:34",
+	"instvars" : [
+		 ],
+	"name" : "NeoJSONObject",
+	"pools" : [
+		 ],
+	"super" : "Dictionary",
+	"type" : "normal" }
