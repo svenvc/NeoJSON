@@ -11,3 +11,6 @@ Go ahead and read the [NeoJSON paper](https://github.com/svenvc/docs/blob/master
 
 Basically, NeoJSONWriter is used to write a JSON representation of Smalltalk objects to a textual stream.
 Similary, NeoJSONReader is used to parse a JSON representation from a textual stream into Smalltalk objects.
+
+http://www.json.org
+https://en.wikipedia.org/wiki/JSON
