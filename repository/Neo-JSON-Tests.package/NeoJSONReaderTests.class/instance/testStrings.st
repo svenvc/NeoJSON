@@ -6,11 +6,20 @@ testStrings
 	self assert: (reader value: '"foo"') equals: 'foo'.
 	self assert: (reader value: '""') equals: ''.
 	self assert: (reader value: '"Foo BAR"') equals: 'Foo BAR'.
+	self assert: (reader value: '" foo "') equals: ' foo '.
 	self assert: (reader value: '"\u00E9l\u00E8ve en Fran\u00E7ais"') equals: 'élève en Français'.
 	self 
 		assert: (reader value: '"\"\\\/\t\r\n\f\b"') 
-		equals: (String withAll: { 
-					$". $\. $/. Character tab. Character cr. Character lf.  Character newPage. Character backspace }).
+		equals: (String withAll: ( OrderedCollection new 
+			add: $";
+			add: $\; 
+			add: $/;
+			add: Character tab;
+			add: Character cr;
+			add: Character lf;
+			add: Character newPage; 
+			add: Character backspace;
+			yourself )).
 	self should: [ reader value: '"open' ] raise: NeoJSONParseError.
 	self should: [ reader value: '"\uAA"' ] raise: NeoJSONParseError.
 	self should: [ reader value: '"\uZZ"' ] raise: NeoJSONParseError.

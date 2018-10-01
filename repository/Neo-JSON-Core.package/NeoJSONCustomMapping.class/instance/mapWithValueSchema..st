@@ -9,5 +9,8 @@ mapWithValueSchema: valueSchema
 		jsonReader parseMapKeysDo: [ :key | | value |
 				value := jsonReader nextAs: valueSchema.
 				map at: key put: value ].
-		map ]
-	"we do not set a writer, #neoJsonOn: should be sufficient"
+		map ].
+	self writer: [ :jsonWriter :map | 
+		jsonWriter writeMapStreamingDo: [ :mapWriter |
+			map keysAndValuesDo: [ :key :value | 
+				mapWriter writeKey: key value: value as: valueSchema ] ] ]

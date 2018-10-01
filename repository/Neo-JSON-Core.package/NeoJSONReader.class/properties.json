@@ -1,18 +1,17 @@
 {
-	"category" : "Neo-JSON-Core",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SvenVanCaekenberghe 3/16/2016 11:23",
+	"super" : "NeoJSONMapper",
+	"category" : "Neo-JSON-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"readStream",
 		"stringStream",
 		"listClass",
 		"mapClass",
-		"propertyNamesAsSymbols" ],
+		"propertyNamesAsSymbols"
+	],
 	"name" : "NeoJSONReader",
-	"pools" : [
-		 ],
-	"super" : "NeoJSONMapper",
-	"type" : "normal" }
+	"type" : "normal"
+}

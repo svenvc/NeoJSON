@@ -7,4 +7,4 @@ testDate
 				for: Date customDo: [ :mapping |
 					mapping encoder: [ :date | date yyyymmdd ] ];
 				nextPut: object ] ].
-	self assert: (writer value: (Date newDay: 8 month: 6 year: 2012)) equals: '"2012-06-08"'
+	self assert: (writer value: (Date fromString: '2012-06-08')) equals: '"2012-06-08"'

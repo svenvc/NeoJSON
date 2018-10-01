@@ -1,21 +1,22 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"allowNil" : "SvenVanCaekenberghe 12/30/2015 11:44",
+		"propertyNamed:ifAbsent:" : "SvenVanCaekenberghe 2/6/2018 17:31",
+		"mapInstVar:" : "SvenVanCaekenberghe 6/9/2012 18:37",
+		"mapInstVars:" : "SvenVanCaekenberghe 7/6/2017 09:55",
+		"mapAccessor:" : "SvenVanCaekenberghe 6/12/2012 13:13",
+		"allowNil" : "SvenVanCaekenberghe 11/13/2017 18:40",
+		"readFrom:" : "SvenVanCaekenberghe 12/30/2015 11:48",
+		"writeObject:on:" : "SvenVanCaekenberghe 7/11/2016 10:54",
+		"mapAccessors:" : "SvenVanCaekenberghe 7/6/2017 09:55",
 		"identifier" : "SvenVanCaekenberghe 3/23/2014 19:25",
 		"initialize" : "SvenVanCaekenberghe 7/11/2016 10:54",
-		"mapAccessor:" : "SvenVanCaekenberghe 6/12/2012 13:13",
-		"mapAccessor:mutator:to:" : "SvenVanCaekenberghe 6/12/2012 13:12",
-		"mapAccessor:to:" : "SvenVanCaekenberghe 6/12/2012 13:13",
-		"mapAccessors:" : "SvenVanCaekenberghe 6/12/2012 13:14",
-		"mapAllInstVars" : "SvenVanCaekenberghe 6/6/2012 16:00",
-		"mapInstVar:" : "SvenVanCaekenberghe 6/9/2012 18:37",
-		"mapInstVar:to:" : "SvenVanCaekenberghe 6/9/2012 18:36",
-		"mapInstVars" : "SvenVanCaekenberghe 6/6/2012 15:59",
-		"mapInstVars:" : "SvenVanCaekenberghe 6/6/2012 16:00",
-		"mapProperty:getter:setter:" : "SvenVanCaekenberghe 7/11/2016 11:01",
-		"propertyNamed:ifAbsent:" : "SvenVanCaekenberghe 7/11/2016 10:58",
-		"readFrom:" : "SvenVanCaekenberghe 12/30/2015 11:48",
+		"mapAllInstVars" : "SvenVanCaekenberghe 7/6/2017 09:55",
+		"mapInstVars" : "SvenVanCaekenberghe 7/6/2017 09:55",
 		"subjectClass:" : "SvenVanCaekenberghe 6/6/2012 15:32",
-		"writeObject:on:" : "SvenVanCaekenberghe 7/11/2016 10:54" } }
+		"mapProperty:getter:setter:" : "SvenVanCaekenberghe 2/6/2018 17:28",
+		"mapInstVar:to:" : "SvenVanCaekenberghe 2/6/2018 17:30",
+		"mapAccessor:mutator:to:" : "SvenVanCaekenberghe 6/12/2012 13:12",
+		"mapAccessor:to:" : "SvenVanCaekenberghe 6/12/2012 13:13"
+	},
+	"class" : { }
+}

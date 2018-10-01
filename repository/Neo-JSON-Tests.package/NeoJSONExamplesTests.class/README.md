@@ -1,0 +1,1 @@
+NeoJSONExamplesTests runs a couple of examples as tests

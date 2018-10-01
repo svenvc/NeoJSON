@@ -18,4 +18,4 @@ testAllowNil
 						for: Point do: [ :mapping | mapping allowNil ];
 						for: #ArrayOfPoints customDo: [ :mapping | mapping listOfElementSchema: Point ];
 						nextAs: #ArrayOfPoints)
-		equals: { 1 @ 2. nil. 3 @ -1 }.
+		equals: (Array with: 1 @ 2 with: nil with: 3 @ -1).

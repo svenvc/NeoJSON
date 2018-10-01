@@ -9,4 +9,6 @@ parseCharacter
 		ifTrue: [ ^ self unescapeChar: char ].
 	char = $u
 		ifTrue: [ ^ self parseCharacterHex ].
-	self error: 'invalid escape character \' , (String with: char)
+	char 
+		ifNil: [ self error: 'invalid escape, end of file' ]
+		ifNotNil: [ self error: 'invalid escape character \' , char asString ]

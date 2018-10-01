@@ -1,14 +1,11 @@
 {
-	"category" : "Neo-JSON-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SvenVanCaekenberghe 6/5/2012 09:50",
-	"instvars" : [
-		 ],
-	"name" : "NeoJSONWriteReadPrettyPrintedTests",
-	"pools" : [
-		 ],
 	"super" : "NeoJSONWriteReadTests",
-	"type" : "normal" }
+	"category" : "Neo-JSON-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "NeoJSONWriteReadPrettyPrintedTests",
+	"type" : "normal"
+}

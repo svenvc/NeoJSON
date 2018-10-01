@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Neo-JSON-Pharo-Examples",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"success",
+		"message",
+		"result"
+	],
+	"name" : "BittrexResponse",
+	"type" : "normal"
+}

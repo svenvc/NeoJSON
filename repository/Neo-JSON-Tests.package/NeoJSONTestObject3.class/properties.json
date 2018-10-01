@@ -1,15 +1,14 @@
 {
-	"category" : "Neo-JSON-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SvenVanCaekenberghe 3/22/2014 09:40",
+	"super" : "NeoJSONTestObject2",
+	"category" : "Neo-JSON-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"color",
-		"transparent" ],
+		"transparent"
+	],
 	"name" : "NeoJSONTestObject3",
-	"pools" : [
-		 ],
-	"super" : "NeoJSONTestObject2",
-	"type" : "normal" }
+	"type" : "normal"
+}

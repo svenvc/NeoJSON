@@ -1,19 +1,18 @@
 {
-	"category" : "Neo-JSON-Core",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
+	"super" : "NeoJSONMapper",
+	"category" : "Neo-JSON-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"writeStream",
 		"prettyPrint",
 		"level",
 		"newLine",
 		"asciiOnly",
-		"writeNil" ],
+		"writeNil"
+	],
 	"name" : "NeoJSONWriter",
-	"pools" : [
-		 ],
-	"super" : "NeoJSONMapper",
-	"type" : "normal" }
+	"type" : "normal"
+}

@@ -1,7 +1,7 @@
 testing
 testIntegers
 	| objects |
-	objects := { 1. -1. 0. 123467890. -1234567890 }.
+	objects := Array with: 1 with: -1 with: 0 with: 123467890 with: -1234567890.
 	self 
 		assert: (self writeRead: objects)
 		equals: objects

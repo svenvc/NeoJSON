@@ -7,5 +7,6 @@ parseMapDo: block
 		block value.
 		(self matchChar: $}) 
 			ifTrue: [ ^ self ].
-		self expectChar: $, ].
-	self error: 'end of map expected'
+		(self matchChar: $,)
+			ifFalse: [ self error: ', or } expected' ] ].
+	self error: 'incomplete map'

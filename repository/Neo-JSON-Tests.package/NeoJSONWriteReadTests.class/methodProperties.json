@@ -1,15 +1,16 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"testDictionaryOfObject2" : "SvenVanCaekenberghe 8/30/2013 11:03",
-		"testFloats" : "SvenVanCaekenberghe 6/4/2012 15:51",
-		"testIntegers" : "SvenVanCaekenberghe 6/4/2012 15:46",
-		"testLists" : "SvenVanCaekenberghe 6/4/2012 15:51",
-		"testMaps" : "SvenVanCaekenberghe 6/4/2012 15:53",
-		"testObject1" : "SvenVanCaekenberghe 6/9/2012 18:48",
+		"writeRead:" : "SvenVanCaekenberghe 6/4/2012 15:36",
 		"testObject2" : "SvenVanCaekenberghe 8/30/2013 10:12",
+		"testDictionaryOfObject2" : "marianopeck 2/1/2018 09:39",
+		"testFloats" : "marianopeck 1/30/2018 13:16",
+		"testSpecials" : "marianopeck 1/30/2018 13:20",
+		"testIntegers" : "marianopeck 1/30/2018 13:17",
+		"testObject1" : "SvenVanCaekenberghe 6/9/2012 18:48",
+		"testStrings" : "marianopeck 1/31/2018 12:00",
+		"testMaps" : "marianopeck 1/30/2018 13:19",
 		"testObject3" : "SvenVanCaekenberghe 3/22/2014 10:14",
-		"testSpecials" : "SvenVanCaekenberghe 6/4/2012 15:46",
-		"testStrings" : "SvenVanCaekenberghe 6/10/2012 21:15",
-		"writeRead:" : "SvenVanCaekenberghe 6/4/2012 15:36" } }
+		"testLists" : "marianopeck 1/30/2018 13:18"
+	},
+	"class" : { }
+}

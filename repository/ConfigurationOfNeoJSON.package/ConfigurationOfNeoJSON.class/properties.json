@@ -1,14 +1,15 @@
 {
-	"category" : "ConfigurationOfNeoJSON",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		"LastVersionLoad" ],
 	"commentStamp" : "<historical>",
-	"instvars" : [
-		"project" ],
-	"name" : "ConfigurationOfNeoJSON",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "ConfigurationOfNeoJSON",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"LastVersionLoad"
+	],
+	"instvars" : [
+		"project"
+	],
+	"name" : "ConfigurationOfNeoJSON",
+	"type" : "normal"
+}

@@ -1,8 +1,9 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"testObject2" : "SvenVanCaekenberghe 6/10/2012 20:20",
 		"testPrettyPrinted" : "SvenVanCaekenberghe 1/15/2014 19:29",
 		"testRead" : "SvenVanCaekenberghe 1/15/2014 19:30",
-		"testWrite" : "SvenVanCaekenberghe 1/15/2014 19:30" } }
+		"testWrite" : "SvenVanCaekenberghe 1/15/2014 19:30",
+		"testObject2" : "SvenVanCaekenberghe 6/10/2012 20:20"
+	},
+	"class" : { }
+}

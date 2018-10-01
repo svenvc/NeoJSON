@@ -1,0 +1,3 @@
+accessing
+nativeJsonBenchmarkRoundTripDirectory
+	^ self nativeJsonBenchmarkDataDirectory / #roundtrip

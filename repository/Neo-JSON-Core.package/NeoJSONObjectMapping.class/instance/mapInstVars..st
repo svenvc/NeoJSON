@@ -1,4 +1,3 @@
 mapping
 mapInstVars: instVarNames
-	instVarNames do: [ :each |
-		self mapInstVar: each ]
+	^ instVarNames collect: [ :each | self mapInstVar: each ]

@@ -1,5 +1,6 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"writeRead:" : "SvenVanCaekenberghe 6/13/2012 16:28" } }
+		"writeRead:" : "SvenVanCaekenberghe 6/13/2012 16:28"
+	},
+	"class" : { }
+}

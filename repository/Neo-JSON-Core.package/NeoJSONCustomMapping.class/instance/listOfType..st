@@ -8,4 +8,4 @@ listOfType: collectionClass
 			jsonReader parseListDo: [ | element |
 				element := jsonReader next.
 				stream nextPut: element ] ] ]
-	"we do not set a writer, #neoJsonOn: should be sufficient"
+	"we do not set a writer, #neoJsonOn: should be sufficient, no element type known anyway"

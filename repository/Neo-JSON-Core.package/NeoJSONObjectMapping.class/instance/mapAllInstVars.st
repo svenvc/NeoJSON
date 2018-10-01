@@ -1,3 +1,3 @@
 convenience
 mapAllInstVars
-	self mapInstVars: subjectClass allInstVarNames
+	^ self mapInstVars: subjectClass allInstVarNames

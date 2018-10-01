@@ -1,16 +1,15 @@
 {
-	"category" : "Neo-JSON-Core",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
+	"super" : "NeoJSONMapping",
+	"category" : "Neo-JSON-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"schemaName",
 		"reader",
-		"writer" ],
+		"writer"
+	],
 	"name" : "NeoJSONCustomMapping",
-	"pools" : [
-		 ],
-	"super" : "NeoJSONMapping",
-	"type" : "normal" }
+	"type" : "normal"
+}

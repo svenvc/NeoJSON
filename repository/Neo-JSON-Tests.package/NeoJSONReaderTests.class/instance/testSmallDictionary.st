@@ -8,7 +8,7 @@ testSmallDictionary
 		next.
 	self 
 		assert: map 
-		equals: (smallDictionaryClass new at: #x put: true; at: #y put: false; at: #'key-1' put: 1; yourself).
+		equals: (smallDictionaryClass new at: 'x' put: true; at: 'y' put: false; at: 'key-1' put: 1; yourself).
 	self 
 		assert: map class 
 		equals: smallDictionaryClass

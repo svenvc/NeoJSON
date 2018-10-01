@@ -1,4 +1,4 @@
-printing
+private
 standardMessageText
 	^ String streamContents: [ :stream |
 		stream << 'No mapping found for '.

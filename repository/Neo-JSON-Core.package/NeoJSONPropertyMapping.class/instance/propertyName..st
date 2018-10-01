@@ -1,3 +1,3 @@
 accessing
-propertyName: string
-	propertyName := string
+propertyName: symbolOrString
+	propertyName := symbolOrString asSymbol

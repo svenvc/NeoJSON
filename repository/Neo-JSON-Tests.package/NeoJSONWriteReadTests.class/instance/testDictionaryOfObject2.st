@@ -3,8 +3,8 @@ testDictionaryOfObject2
 	| data json reader |
 	data := Dictionary new.
 	data 
-		at: #one put: NeoJSONTestObject2 example1;
-		at: #two put: NeoJSONTestObject2 example1.
+		at: 'one' put: NeoJSONTestObject2 example1;
+		at: 'two' put: NeoJSONTestObject2 example1.
 	json := NeoJSONWriter toString: data.
 	reader := NeoJSONReader on: json readStream.
 	reader for: #DictionaryOfObject2 customDo: [ :mapping |

@@ -1,14 +1,14 @@
 {
+	"commentStamp" : "MarianoMartinezPeck 1/30/2018 09:47",
+	"super" : "Error",
 	"category" : "Neo-JSON-Core",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
-	"commentStamp" : "<historical>",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
-		 ],
+		"object",
+		"collection"
+	],
 	"name" : "NeoJSONMappingNotFound",
-	"pools" : [
-		 ],
-	"super" : "NotFound",
-	"type" : "normal" }
+	"type" : "normal"
+}

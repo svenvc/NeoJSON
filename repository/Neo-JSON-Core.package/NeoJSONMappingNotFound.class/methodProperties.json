@@ -1,5 +1,14 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"standardMessageText" : "SvenVanCaekenberghe 6/12/2012 15:47" } }
+		"collection" : "marianopeck 1/31/2018 09:10",
+		"collection:" : "marianopeck 1/31/2018 09:10",
+		"object:" : "MarianoMartinezPeck 1/25/2018 09:35",
+		"object" : "MarianoMartinezPeck 1/25/2018 09:35",
+		"messageText" : "MarianoMartinezPeck 1/30/2018 08:46",
+		"standardMessageText" : "MarianoMartinezPeck 1/25/2018 09:36"
+	},
+	"class" : {
+		"signalFor:" : "MarianoMartinezPeck 1/30/2018 09:48",
+		"signalFor:in:" : "MarianoMartinezPeck 1/30/2018 09:48"
+	}
+}

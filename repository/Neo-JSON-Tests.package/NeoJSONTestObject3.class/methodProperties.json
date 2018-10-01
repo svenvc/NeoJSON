@@ -1,11 +1,14 @@
 {
-	"class" : {
-		"example1" : "SvenVanCaekenberghe 3/22/2014 09:43",
-		"neoJsonMapping:" : "SvenVanCaekenberghe 3/22/2014 10:50" },
 	"instance" : {
+		"transparent" : "SvenVanCaekenberghe 3/22/2014 09:43",
 		"=" : "SvenVanCaekenberghe 3/22/2014 09:45",
+		"color:" : "SvenVanCaekenberghe 3/22/2014 09:43",
 		"asDictionary" : "SvenVanCaekenberghe 3/22/2014 09:46",
 		"color" : "SvenVanCaekenberghe 3/22/2014 09:43",
-		"color:" : "SvenVanCaekenberghe 3/22/2014 09:43",
-		"transparent" : "SvenVanCaekenberghe 3/22/2014 09:43",
-		"transparent:" : "SvenVanCaekenberghe 3/22/2014 09:43" } }
+		"transparent:" : "SvenVanCaekenberghe 3/22/2014 09:43"
+	},
+	"class" : {
+		"example1" : "SvenVanCaekenberghe 3/22/2014 09:43",
+		"neoJsonMapping:" : "SvenVanCaekenberghe 3/22/2014 10:50"
+	}
+}

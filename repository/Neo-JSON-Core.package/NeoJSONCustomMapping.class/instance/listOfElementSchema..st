@@ -7,5 +7,7 @@ listOfElementSchema: elementSchema
 		jsonReader listClass streamContents: [ :stream |
 			jsonReader parseListDo: [ | element |
 				element := jsonReader nextAs: elementSchema.
-				stream nextPut: element ] ] ]
-	"we do not set a writer, #neoJsonOn: should be sufficient"
+				stream nextPut: element ] ] ].
+	self writer: [ :jsonWriter :list | 
+		jsonWriter writeListStreamingDo: [ :listWriter |
+			list do: [ :each | listWriter writeElement: each as: elementSchema ] ] ]

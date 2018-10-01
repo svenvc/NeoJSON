@@ -4,6 +4,6 @@ nextPut: anObject as: schema
 	Write objects according to schema."
 	
 	| mapping |
-	schema ifNil: [ ^ self nextPut: anObject ].
+	(schema isNil or: [ anObject isNil ]) ifTrue: [ ^ self nextPut: anObject ].
 	mapping := self mappingFor: schema.
 	^ mapping writeObject: anObject on: self
