@@ -8,3 +8,6 @@ NeoJSON is an elegant and efficient standalone Smalltalk framework to read and w
 MIT Licensed.
 
 Go ahead and read the [NeoJSON paper](https://github.com/svenvc/docs/blob/master/neo/neo-json-paper.md).
+
+Basically, NeoJSONWriter is used to write a JSON representation of Smalltalk objects to a textual stream.
+Similary, NeoJSONReader is used to parse a JSON representation from a textual stream into Smalltalk objects.
