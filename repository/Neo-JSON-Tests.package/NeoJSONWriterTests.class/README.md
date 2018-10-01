@@ -1,1 +1,0 @@
-I am NeoJSONWriterTests, a test suite for NeoJSONWriter.

@@ -1,1 +1,0 @@
-I am NeoJSONMappingTests, testing more exotic kinds of mapping constructs.

@@ -1,3 +1,0 @@
-accessing
-nativeJsonBenchmarkRoundTripFiles
-	^ self nativeJsonBenchmarkRoundTripDirectory children

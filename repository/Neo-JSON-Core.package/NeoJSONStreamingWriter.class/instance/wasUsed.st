@@ -1,3 +1,0 @@
-testing
-wasUsed
-	^ first not

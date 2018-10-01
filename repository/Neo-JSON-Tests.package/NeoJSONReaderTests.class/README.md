@@ -1,1 +1,0 @@
-I am NeoJSONReaderTests, a test suite for NeoJSONReader.

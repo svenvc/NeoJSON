@@ -1,3 +1,0 @@
-accessing
-writeNil
-	^ jsonWriter writeNil

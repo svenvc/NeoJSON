@@ -1,3 +1,0 @@
-accessing
-nativeJsonBenchmarkJsonCheckerDirectory
-	^ self nativeJsonBenchmarkDataDirectory / #jsonchecker

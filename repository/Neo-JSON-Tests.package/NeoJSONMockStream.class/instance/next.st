@@ -1,3 +1,0 @@
-accessing
-next
-	^ stream next
