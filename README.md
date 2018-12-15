@@ -1,5 +1,4 @@
-NeoJSON
-=======
+# NeoJSON
 
 NeoJSON is an elegant and efficient standalone Smalltalk framework to read and write JSON converting to or from Smalltalk objects.
 
@@ -14,3 +13,20 @@ Similary, NeoJSONReader is used to parse a JSON representation from a textual st
 
 http://www.json.org
 https://en.wikipedia.org/wiki/JSON
+
+## Installation
+
+You can load NeoJSON using Metacello
+
+```Smalltalk
+Metacello new
+  repository: 'github://svenvc/NeoJSON/repository';
+  baseline: 'NeoJSON';
+  load.
+```
+
+You can use the following dependency from your own Metacello configuration or baseline
+
+```Smalltalk
+spec baseline: 'NeoJSON' with: [ spec repository: 'github://svenvc/NeoJSON/repository' ].
+```
