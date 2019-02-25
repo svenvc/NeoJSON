@@ -93,20 +93,23 @@ NeoJSONWriter >> encodeChar: char [
 ]
 
 { #category : #private }
-NeoJSONWriter >> encodeKey: key value: value [
+NeoJSONWriter >> encodeKey: key [
+	key isString ifFalse: [ ^ self error: 'JSON key names in objects must be strings' ].
 	self nextPut: key.
 	self prettyPrintSpace.
 	writeStream nextPut: $:.
-	self prettyPrintSpace.
+	self prettyPrintSpace
+]
+
+{ #category : #private }
+NeoJSONWriter >> encodeKey: key value: value [
+	self encodeKey: key.
 	self nextPut: value
 ]
 
 { #category : #private }
 NeoJSONWriter >> encodeKey: key value: value as: valueSchema [
-	self nextPut: key.
-	self prettyPrintSpace.
-	writeStream nextPut: $:.
-	self prettyPrintSpace.
+	self encodeKey: key.
 	self nextPut: value as: valueSchema
 ]
 
