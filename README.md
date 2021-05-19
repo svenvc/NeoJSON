@@ -2,7 +2,7 @@
 
 NeoJSON is an elegant and efficient standalone Smalltalk framework to read and write JSON converting to or from Smalltalk objects.
 
-[![Build Status](https://travis-ci.org/svenvc/NeoJSON.svg?branch=master)](https://travis-ci.org/svenvc/NeoJSON)
+[![CI](https://github.com/svenvc/NeoJSON/actions/workflows/CI.yml/badge.svg)](https://github.com/svenvc/NeoJSON/actions/workflows/CI.yml)
 
 MIT Licensed.
 
