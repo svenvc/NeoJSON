@@ -31,9 +31,10 @@ Class {
 		'level',
 		'newLine',
 		'asciiOnly',
-		'writeNil'
+		'writeNil',
+		'floatPrinter'
 	],
-	#category : 'Neo-JSON-Core'
+	#category : #'Neo-JSON-Core'
 }
 
 { #category : #'instance creation' }
@@ -157,6 +158,14 @@ NeoJSONWriter >> escapeUnicode: codePoint [
 				ifFalse: [ self error: 'Character Unicode code point outside encoder range' ] ]
 ]
 
+{ #category : #'initialize-release' }
+NeoJSONWriter >> floatPrinter: anObject [
+	"Set the float print, an object that implements #printFloat:on:
+	By default, I am my own float printer"
+	
+	floatPrinter := anObject
+]
+
 { #category : #private }
 NeoJSONWriter >> indentedDo: block [
 	level := level + 1.
@@ -172,6 +181,7 @@ NeoJSONWriter >> initialize [
 	self prettyPrint: false.
 	self asciiOnly: false.
 	self writeNil: false.
+	self floatPrinter: self.
 	level := 0
 ]
 
@@ -252,6 +262,13 @@ NeoJSONWriter >> prettyPrintSpace [
 		ifTrue: [ writeStream nextPut: Character space ]
 ]
 
+{ #category : #printing }
+NeoJSONWriter >> printFloat: float on: stream [
+	"See NeoJSONFloatPrinter for a custom float printer"
+	
+	float printOn: stream
+]
+
 { #category : #writing }
 NeoJSONWriter >> writeBoolean: boolean [
 	boolean printOn: writeStream
@@ -259,7 +276,7 @@ NeoJSONWriter >> writeBoolean: boolean [
 
 { #category : #writing }
 NeoJSONWriter >> writeFloat: float [
-	float printOn: writeStream
+	floatPrinter printFloat: float on: writeStream
 ]
 
 { #category : #writing }
