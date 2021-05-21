@@ -1,15 +1,14 @@
 "
 I am NeoJSONFloatPrinter.
 
-I can print Float numbers is a compact, human friendly format.
+I print Float numbers in a compact, human friendly format.
 
-The following are hardcoded (for now):
-
- - base 10
+The following (default) parameters are used:
+ - base 10 - hardcoded (for now)
  - precision 5 digits
- - decimal point
- - exponent e
- - NaN, Inf and -Inf
+ - decimal point - hardcoded (for now)
+ - exponent e - hardcoded (for now)
+ - NaN, Inf and -Inf - hardcoded (for now)
  - lower 1e-4
  - upper 1e6
  - decimal notation for abs values inside abs [ lower, upper ]
@@ -19,16 +18,38 @@ The following are hardcoded (for now):
  - no thousands separators
  - no engineering notation
 
+See my class side for configuration examples.
+
+My public interface is in the printing protocol.
+
 "
 Class {
 	#name : #NeoJSONFloatPrinter,
 	#superclass : #Object,
+	#instVars : [
+		'precision',
+		'lower',
+		'upper',
+		'base'
+	],
 	#category : #'Neo-JSON-Core'
 }
 
-{ #category : #constants }
-NeoJSONFloatPrinter >> base [
-	^ 10
+{ #category : #'instance creation' }
+NeoJSONFloatPrinter class >> lowPrecision [
+	^ self new
+		precision: 2;
+		lower: 1e-2;
+		upper: 1e5;
+		yourself
+]
+
+{ #category : #'instance creation' }
+NeoJSONFloatPrinter class >> scientificOnly [
+	^ self new
+		lower: 0;
+		upper: 0;
+		yourself
 ]
 
 { #category : #constants }
@@ -46,9 +67,18 @@ NeoJSONFloatPrinter >> infinite [
 	^ 'Inf'
 ]
 
-{ #category : #constants }
-NeoJSONFloatPrinter >> lower [
-	^ self base raisedTo: (self precision - 1) negated
+{ #category : #'initialize-release' }
+NeoJSONFloatPrinter >> initialize [
+	super initialize.
+	base := 10.
+	precision := 5.
+	lower := 1e-4.
+	upper := 1e6
+]
+
+{ #category : #'initialize-release' }
+NeoJSONFloatPrinter >> lower: number [
+	lower := number
 ]
 
 { #category : #constants }
@@ -56,9 +86,10 @@ NeoJSONFloatPrinter >> nan [
 	^ 'NaN'
 ]
 
-{ #category : #constants }
-NeoJSONFloatPrinter >> precision [
-	^ 5
+{ #category : #'initialize-release' }
+NeoJSONFloatPrinter >> precision: numberOfDigits [
+	self assert: (numberOfDigits between: 1 and: 20).
+	precision := numberOfDigits
 ]
 
 { #category : #printing }
@@ -68,11 +99,20 @@ NeoJSONFloatPrinter >> print: float [
 ]
 
 { #category : #private }
-NeoJSONFloatPrinter >> print: fractionPart asFractionOn: stream [
+NeoJSONFloatPrinter >> print: float decimalOn: stream [
+	stream print: float asInteger.
+	stream nextPut: self decimalPoint.
+	self 
+		print: (float fractionPart * (base raisedTo: precision)) rounded 
+		fractionOn: stream
+]
+
+{ #category : #private }
+NeoJSONFloatPrinter >> print: fractionPart fractionOn: stream [
 	| zeros |
 	zeros := 0. "leading zeros are significant, trailing zeros are not printed"
-	self precision to: 1 by: -1 do: [ :position | | digit |
-		digit := fractionPart digitAt: position base: self base.
+	precision to: 1 by: -1 do: [ :position | | digit |
+		digit := fractionPart digitAt: position base: base.
 		digit = 0
 			ifTrue: [ zeros := zeros +1 ]
 			ifFalse: [
@@ -82,29 +122,13 @@ NeoJSONFloatPrinter >> print: fractionPart asFractionOn: stream [
 				stream nextPut: digit asCharacterDigit ] ]
 ]
 
-{ #category : #private }
-NeoJSONFloatPrinter >> print: float decimalOn: stream [
-	| fractionPart zeros |
-	stream print: float asInteger.
-	stream nextPut: self decimalPoint.
-	fractionPart := (float fractionPart * (self base raisedTo: self precision)) rounded.
-	zeros := 0.
-	self precision to: 1 by: -1 do: [ :position | | digit |
-		digit := fractionPart digitAt: position base: self base.
-		digit = 0
-			ifTrue: [ zeros := zeros +1 ]
-			ifFalse: [
-				zeros > 0 ifTrue: [ zeros timesRepeat: [ stream nextPut: $0 ]. zeros := 0 ].
-				stream nextPut: digit asCharacterDigit ] ]
-]
-
 { #category : #printing }
 NeoJSONFloatPrinter >> print: float on: stream [
 	| int abs |
 	(float isZero or: [ float isFinite not ])
 		ifTrue: [ ^ self print: float specialOn: stream ].
 	self print: float signOn: stream.
-	((abs := float abs) between: self lower and: self upper)
+	((abs := float abs) between: lower and: upper)
 		ifTrue: [ 
 			(int := abs asInteger) = abs 
 				ifTrue: [ int printOn: stream ]
@@ -115,8 +139,8 @@ NeoJSONFloatPrinter >> print: float on: stream [
 { #category : #private }
 NeoJSONFloatPrinter >> print: float scientificOn: stream [
 	| exponent mantissa |
-	exponent := (float ln / self base ln) floor.
-	mantissa := float / (self base raisedTo: exponent).
+	exponent := (float ln / base ln) floor.
+	mantissa := float / (base raisedTo: exponent).
 	self print: mantissa decimalOn: stream.
 	stream
 		nextPut: self exponent;
@@ -148,7 +172,7 @@ NeoJSONFloatPrinter >> printFloat: float on: stream [
 	self print: float on: stream
 ]
 
-{ #category : #constants }
-NeoJSONFloatPrinter >> upper [
-	^ self base raisedTo: (self precision + 1)
+{ #category : #'initialize-release' }
+NeoJSONFloatPrinter >> upper: number [
+	upper := number
 ]
