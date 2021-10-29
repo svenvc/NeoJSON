@@ -2,7 +2,7 @@
 I am NeoJSONFloatPrinterTests, the collection of unit tests for NeoJSONFloatPrinter.
 "
 Class {
-	#name : #NeoJSONFloatPrintrTests,
+	#name : #NeoJSONFloatPrinterTests,
 	#superclass : #TestCase,
 	#instVars : [
 		'printer'
@@ -11,13 +11,13 @@ Class {
 }
 
 { #category : #running }
-NeoJSONFloatPrintrTests >> setUp [
+NeoJSONFloatPrinterTests >> setUp [
 	super setUp.
 	printer := NeoJSONFloatPrinter new
 ]
 
 { #category : #tests }
-NeoJSONFloatPrintrTests >> testDecimalNotation [
+NeoJSONFloatPrinterTests >> testDecimalNotation [
 	self assert: (printer print: 1.5) equals: '1.5'.
 	self assert: (printer print: -1.5) equals: '-1.5'.
 	self assert: (printer print: 0.5) equals: '0.5'.
@@ -34,7 +34,7 @@ NeoJSONFloatPrintrTests >> testDecimalNotation [
 ]
 
 { #category : #tests }
-NeoJSONFloatPrintrTests >> testInteger [
+NeoJSONFloatPrinterTests >> testInteger [
 	self assert: (printer print: 1.0) equals: '1'.
 	self assert: (printer print: 0.0) equals: '0'.
 	self assert: (printer print: -1.0) equals: '-1'.
@@ -44,7 +44,7 @@ NeoJSONFloatPrintrTests >> testInteger [
 ]
 
 { #category : #tests }
-NeoJSONFloatPrintrTests >> testLowPrecision [
+NeoJSONFloatPrinterTests >> testLowPrecision [
 	printer := NeoJSONFloatPrinter lowPrecision.
 	self assert: (printer print: (4/3) asFloat) equals: '1.33'.
 	self assert: (printer print: 12345.66) equals: '12345.66'.
@@ -58,7 +58,7 @@ NeoJSONFloatPrintrTests >> testLowPrecision [
 ]
 
 { #category : #tests }
-NeoJSONFloatPrintrTests >> testScientificNotation [
+NeoJSONFloatPrinterTests >> testScientificNotation [
 	self assert: (printer print: 1234567.5) equals: '1.23457e6'. "note the rounding"
 	self assert: (printer print: -1234567.5) equals: '-1.23457e6'. "note the rounding"
 	self assert: (printer print: 0.0000123) equals: '1.23e-5'.
@@ -67,7 +67,7 @@ NeoJSONFloatPrintrTests >> testScientificNotation [
 ]
 
 { #category : #tests }
-NeoJSONFloatPrintrTests >> testScientificOnly [
+NeoJSONFloatPrinterTests >> testScientificOnly [
 	printer := NeoJSONFloatPrinter scientificOnly.
 	self assert: (printer print: (4/3) asFloat) equals: '1.33333e0'.
 	self assert: (printer print: 12345.66) equals: '1.23457e4'.
@@ -80,7 +80,7 @@ NeoJSONFloatPrintrTests >> testScientificOnly [
 ]
 
 { #category : #tests }
-NeoJSONFloatPrintrTests >> testSpecialValues [
+NeoJSONFloatPrinterTests >> testSpecialValues [
 	self assert: (printer print: Float zero) equals: '0'.
 	self assert: (printer print: Float nan) equals: 'NaN'.
 	self assert: (printer print: Float infinity) equals: 'Inf'.
@@ -88,7 +88,7 @@ NeoJSONFloatPrintrTests >> testSpecialValues [
 ]
 
 { #category : #tests }
-NeoJSONFloatPrintrTests >> testWellKnownConstants [
+NeoJSONFloatPrinterTests >> testWellKnownConstants [
 	self assert: (printer print: Float pi) equals: '3.14159'.
 	self assert: (printer print: Float e) equals: '2.71828'.
 	"the earth's mass in kg"
