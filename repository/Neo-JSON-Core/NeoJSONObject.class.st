@@ -1,6 +1,6 @@
 "
 I am NeoJSONObject.
-I am a Dictionary.
+I am an OrderedDictionary.
 
 I behave more like a JavaScript object. I return nil for missing keys. I allow any property to be read or set by using a normal accessor message.
 
@@ -35,12 +35,14 @@ The first is special because it returns nil as soon as a key is missing. The sec
 
 	NeoJSONObject new atPath: #(one two three) put: 42; yourself.
 	NeoJSONObject new atPath: #(one two three) put: 42; atPath: #(one two three).
-		
+
+The fact that I am an OrderedDictionary means to I maintain the order of keys. This is meant as a convenience feature only as the official JSON specification clearly states ""An object is an unordered set of name/value pairs"".
+
 "
 Class {
 	#name : #NeoJSONObject,
-	#superclass : #Dictionary,
-	#category : 'Neo-JSON-Core'
+	#superclass : #OrderedDictionary,
+	#category : #'Neo-JSON-Core'
 }
 
 { #category : #convenience }
