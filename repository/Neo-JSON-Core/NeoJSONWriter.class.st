@@ -176,8 +176,7 @@ NeoJSONWriter >> indentedDo: block [
 { #category : #'initialize-release' }
 NeoJSONWriter >> initialize [
 	super initialize.
-	"For portability reasons use `Character cr asString` rather than `String cr`"
-	self newLine: Character cr asString.
+	self newLine: OSPlatform current lineEnding.
 	self prettyPrint: false.
 	self asciiOnly: false.
 	self writeNil: false.
