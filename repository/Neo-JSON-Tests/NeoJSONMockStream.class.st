@@ -29,6 +29,11 @@ NeoJSONMockStream >> close [
 ]
 
 { #category : #accessing }
+NeoJSONMockStream >> collectionSpecies [
+	^ stream collectionSpecies
+]
+
+{ #category : #accessing }
 NeoJSONMockStream >> next [
 	^ stream next
 ]
