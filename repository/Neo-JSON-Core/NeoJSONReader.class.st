@@ -39,7 +39,7 @@ Class {
 		'mapClass',
 		'propertyNamesAsSymbols'
 	],
-	#category : 'Neo-JSON-Core'
+	#category : #'Neo-JSON-Core'
 }
 
 { #category : #convenience }
@@ -451,13 +451,22 @@ NeoJSONReader >> propertyNamesAsSymbols: boolean [
 ]
 
 { #category : #private }
+NeoJSONReader >> stringStreamClass [
+	"Answer the class of the collection used for the stringStream of receiver.
+	
+	NOTE: It is String, but if receiver's readStream is over 
+	another class of String, then this provides compatibility for that."
+
+	^ readStream collectionSpecies
+]
+
+{ #category : #private }
 NeoJSONReader >> stringStreamContents: block [
 	"Like String streamContents: block
 	but reusing the underlying buffer for improved efficiency"
-	
-	stringStream 
-		ifNil: [ 
-			stringStream := (String new: 32) writeStream ].
+
+	stringStream ifNil: [ 
+		stringStream := (self stringStreamClass new: 32) writeStream ].
 	stringStream reset.
 	block value: stringStream.
 	^ stringStream contents
