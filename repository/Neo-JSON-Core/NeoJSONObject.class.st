@@ -64,6 +64,15 @@ NeoJSONObject >> at: key [
 ]
 
 { #category : #accessing }
+NeoJSONObject >> at: key1 at: key2 [
+
+	"Answer nil for missing keys.
+	My superclass would signal a KeyNotFound."
+	
+	^ self at: key1 at: key2 ifAbsent: [ nil ]
+]
+
+{ #category : #accessing }
 NeoJSONObject >> at: key ifPresent: aPresentBlock ifAbsentPut: anAbsentBlock [
 	"Lookup the given key in the receiver. If it is present, answer the
 	value of evaluating the first block optionally with the value associated with the key.
