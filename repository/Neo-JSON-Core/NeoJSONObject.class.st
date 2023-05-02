@@ -50,7 +50,7 @@ NeoJSONObject class >> fromString: string [
 	"Parse string as JSON, so that maps become instances of me"
 
 	^ (NeoJSONReader on: string readStream)
-			mapClass: NeoJSONObject;
+			mapClass: self;
 			propertyNamesAsSymbols: true;
 			next
 ]
@@ -59,8 +59,23 @@ NeoJSONObject class >> fromString: string [
 NeoJSONObject >> at: key [
 	"I return nil for missing keys.
 	My superclass would signal a KeyNotFound."
-	
+
 	^ self at: key ifAbsent: [ nil ]
+]
+
+{ #category : #'nested dictionaries' }
+NeoJSONObject >> at: firstKey at: secondKey [
+	"I return nil for missing keys.
+	My superclass would signal a KeyNotFound."
+
+	^ self atPath: { firstKey. secondKey }
+]
+
+{ #category : #'nested dictionaries' }
+NeoJSONObject >> at: firstKey at: secondKey put: value [
+	"Store value under secondKey in nested object under firstKey, create new level when needed"
+
+	^ self atPath: { firstKey. secondKey } put: value
 ]
 
 { #category : #accessing }
@@ -71,7 +86,7 @@ NeoJSONObject >> at: key ifPresent: aPresentBlock ifAbsentPut: anAbsentBlock [
 
 	"Overwritten to patch a bug in the superclass implementation in Pharo 7 and 8.
 	This problem was fixed in Pharo 9 where this overwrite is no longer necessary but harmless."
-	
+
 	^ self
 		at: key
 		ifPresent: aPresentBlock
@@ -81,19 +96,19 @@ NeoJSONObject >> at: key ifPresent: aPresentBlock ifAbsentPut: anAbsentBlock [
 { #category : #accessing }
 NeoJSONObject >> atPath: keyCollection [
 	"Use each key in keyCollection recursively, stop when nil is encountered"
-	
+
 	| value |
 	value := self.
 	keyCollection do: [ :each |
 		value := value at: each.
 		value ifNil: [ ^ nil ] ].
-	^ value 
+	^ value
 ]
 
 { #category : #accessing }
 NeoJSONObject >> atPath: keyCollection put: newValue [
 	"Use each key in keyCollection recursively, create new levels when needed"
-	
+
 	| target |
 	keyCollection ifEmpty: [ ^ self ].
 	target := self.
@@ -108,7 +123,7 @@ NeoJSONObject >> atPath: keyCollection put: newValue [
 NeoJSONObject >> doesNotUnderstand: message [
 	"Overwritten so that 'self foo' becomes 'self at: #foo'
 	and 'self foo: 1' becomes 'self at: #foo put: 1' except that self is returned"
-	
+
 	| key |
 	key := message selector.
 	key isUnary
@@ -121,7 +136,7 @@ NeoJSONObject >> doesNotUnderstand: message [
 { #category : #accessing }
 NeoJSONObject >> name [
 	"Overwritten to make this accessor available as key"
-	
+
 	^ self at: #name
 ]
 
@@ -131,15 +146,15 @@ NeoJSONObject >> printOn: stream [
 
 	[ (NeoJSONWriter on: stream) nextPut: self ]
 		on: Error
-		do: [ :exception | 
+		do: [ :exception |
 			stream
 				nextPutAll: ' Error printing JSON: ';
-				nextPutAll: exception printString ]
+				print: exception ]
 ]
 
 { #category : #evaluating }
 NeoJSONObject >> value [
 	"Overwritten to make this accessor available as key"
-	
+
 	^ self at: #value
 ]
