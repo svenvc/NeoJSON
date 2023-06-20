@@ -342,13 +342,15 @@ NeoJSONReader >> parseMapKeysDo: block [
 
 { #category : #parsing }
 NeoJSONReader >> parseNumber [
-	| negated number |
+	| negated number isFloat |
 	negated := readStream peekFor: $-.
 	number := self parseNumberInteger.
-	(readStream peekFor: $.)
-		ifTrue: [ number := number + self parseNumberFraction ].
+	isFloat := (readStream peekFor: $.)
+		ifTrue: [ number := number + self parseNumberFraction. true ]
+		ifFalse: [ false ].
 	((readStream peekFor: $e) or: [ readStream peekFor: $E ])
 		ifTrue: [ number := number * self parseNumberExponent ].
+	isFloat ifTrue: [ number := number asFloat ].
 	negated
 		ifTrue: [ number := number negated ].
 	self consumeWhitespace.
@@ -377,11 +379,11 @@ NeoJSONReader >> parseNumberExponent [
 NeoJSONReader >> parseNumberFraction [
 	| number power |
 	number := 0.
-	power := 1.0.
+	power := 1.
 	[ readStream atEnd not and: [ readStream peek isDigit ] ] 
 		whileTrue: [
 			number := 10 * number + readStream next digitValue.
-			power := power * 10.0 ].
+			power := power * 10 ].
 	^ number / power
 ]
 
