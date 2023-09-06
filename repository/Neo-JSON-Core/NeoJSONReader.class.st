@@ -226,7 +226,9 @@ NeoJSONReader >> parseCharacterHex [
 			leadSurrogate := value.
 			trailSurrogate := self parseTrailingSurrogateHexEscape.
 			codePoint := (leadSurrogate - 16rD800) * 16r400 + (trailSurrogate - 16rDC00).
-			codePoint := 16r10000 + codePoint ].
+			codePoint := 16r10000 + codePoint.
+			codePoint > 16r10FFFF 
+				ifTrue: [ self error: 'Character Unicode code point outside encoder range' ] ].
 	^ Character codePoint: codePoint
 ]
 

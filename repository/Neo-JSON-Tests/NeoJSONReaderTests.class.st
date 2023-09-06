@@ -4,7 +4,7 @@ I am NeoJSONReaderTests, a test suite for NeoJSONReader.
 Class {
 	#name : #NeoJSONReaderTests,
 	#superclass : #TestCase,
-	#category : 'Neo-JSON-Tests'
+	#category : #'Neo-JSON-Tests'
 }
 
 { #category : #testing }
@@ -209,7 +209,10 @@ NeoJSONReaderTests >> testNonBMPCharacterDecoding [
 	| string object |
 	string := 16r1D11E asCharacter asString. "MUSICAL SYMBOL G CLEF"
 	object := (NeoJSONReader fromString: '"\uD834\uDD1E"').
-	self assert: object equals: string
+	self assert: object equals: string.
+	
+	"UTF-16 surrogate pairs might be invalid, make sure an error is raised"
+	self should: [ NeoJSONReader fromString: '"\udbff\ue000"' ] raise: NeoJSONParseError
 ]
 
 { #category : #testing }
