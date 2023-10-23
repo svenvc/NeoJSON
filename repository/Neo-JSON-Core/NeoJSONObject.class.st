@@ -45,12 +45,80 @@ Class {
 	#category : #'Neo-JSON-Core'
 }
 
+{ #category : #example }
+NeoJSONObject class >> exampleMagnitudeClassHierarchy [
+	<gtExample>
+	| builder |
+	builder := [ :aClass | 
+		NeoJSONObject new
+			name: aClass name;
+			superclass: aClass superclass name;
+			instanceVariables: aClass instVarNames;
+			category: aClass category;
+			totalInstanceVariablesCount: aClass allInstVarNames size;
+			methodCount: aClass methods size;
+			totalMethodCount: aClass allMethods size;
+			subclasses: (aClass subclasses 
+								collect: [ :aSubclass | builder value: aSubclass ] 
+								as: NeoJSONArray) ].
+	^ builder value: Magnitude
+]
+
+{ #category : #example }
+NeoJSONObject class >> exampleNested [
+	<gtExample>
+	^ self exampleSimple array: NeoJSONArray exampleSimple
+]
+
+{ #category : #example }
+NeoJSONObject class >> exampleNestedRoundtrip [
+	<gtExample>
+	| json result|
+	json := self exampleNested printString.
+	result := self fromString: json.
+	self assert: result equals: self exampleNested.
+	^ result
+]
+
+{ #category : #example }
+NeoJSONObject class >> exampleSimple [
+	<gtExample>
+	^ self new
+		foo: 100;
+		bar: 200
+]
+
+{ #category : #example }
+NeoJSONObject class >> exampleSimpleJSON [
+	<gtExample>
+	^ '{"foo":100,"bar":200}'
+]
+
+{ #category : #example }
+NeoJSONObject class >> exampleSimpleParsing [
+	<gtExample>
+	| result |
+	result := self fromString: self exampleSimpleJSON.
+	self assert: result equals: self exampleSimple.
+	^ result
+]
+
+{ #category : #example }
+NeoJSONObject class >> exampleSimpleWriting [
+	<gtExample>
+	| result |
+	result := self exampleSimple printString.
+	self assert: result equals: self exampleSimpleJSON.
+	^ result
+]
+
 { #category : #convenience }
 NeoJSONObject class >> fromString: string [
 	"Parse string as JSON, so that maps become instances of me"
 
 	^ (NeoJSONReader on: string readStream)
 			mapClass: self;
+			listClass: NeoJSONArray;
 			propertyNamesAsSymbols: true;
 			next
 ]
