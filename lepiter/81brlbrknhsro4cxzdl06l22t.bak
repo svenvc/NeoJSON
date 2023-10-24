@@ -217,7 +217,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-10-23T15:01:16.025958+02:00"
+						"dateAndTimeString" : "2023-10-24T11:06:23.066158+02:00"
 					}
 				},
 				"uid" : {
@@ -283,6 +283,83 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-10-24T10:52:41.800972+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-10-24T11:08:17.241982+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "dVXPMtTEDQC1y38DBchSng=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "{{gtClass:NeoJSONObject}} is a subclass of OrderedDictionary which automatically implements accessors using key access. When a key does not exist, nil is returned instead of a {{gtClass:KeyNotFound}} being raised."
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-10-24T11:16:16.219788+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-10-24T11:16:16.219788+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Vq4dh9TEDQC8hjUdBchSng=="
+				},
+				"exampleSelector" : "exampleSimpleUsage",
+				"previewHeight" : 200,
+				"previewShowSelector" : "gtViewsFor:",
+				"exampleBehaviorName" : "NeoJSONObject class",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : false
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2023-10-23T14:53:13.189284+02:00"
 					}
 				},
@@ -294,7 +371,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-10-23T14:58:50.307554+02:00"
+						"dateAndTimeString" : "2023-10-24T11:21:09.587872+02:00"
 					}
 				},
 				"uid" : {
@@ -304,7 +381,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Let's see. One convenient way to parse this is to use NeoJSONObject class>>#fromString."
+				"string" : "One convenient way to parse JSON is to use {{gtMethod: NeoJSONObject class>>#fromString:}}."
 			},
 			{
 				"__type" : "exampleSnippet",
@@ -371,7 +448,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-10-23T14:59:48.738683+02:00"
+						"dateAndTimeString" : "2023-10-24T10:52:03.553046+02:00"
 					}
 				},
 				"uid" : {
@@ -381,7 +458,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "The inverse operation, from an object to JSON is also convenient, given it is a NeoJSONObject."
+				"string" : "The inverse operation, from an object to JSON is also convenient, given it is a {{gtClass:NeoJSONObject}} whose {{gtMethod: NeoJSONObject>>#printOn:}} outputs JSON."
 			},
 			{
 				"__type" : "exampleSnippet",
