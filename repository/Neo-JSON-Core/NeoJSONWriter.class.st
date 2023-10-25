@@ -37,6 +37,34 @@ Class {
 	#category : #'Neo-JSON-Core'
 }
 
+{ #category : #example }
+NeoJSONWriter class >> exampleCoordinates [
+	<gtExample>
+	^ { 0@0 . 1@2. 2@4. 3@6 . 4@8}
+]
+
+{ #category : #example }
+NeoJSONWriter class >> exampleCoordinatesCustomWriting [
+	<gtExample>
+	^ String streamContents: [ :out |
+		| writer |
+		writer := self on: out.
+		writer mapAllInstVarsFor: Point.
+		writer nextPut: self exampleCoordinates ]
+]
+
+{ #category : #example }
+NeoJSONWriter class >> exampleCoordinatesGeneric [
+	<gtExample>
+	^ (0 to: 4) collect: [ :each | { 'x' -> each . 'y' -> (each * 2) } asDictionary ] 
+]
+
+{ #category : #example }
+NeoJSONWriter class >> exampleCoordinatesGenericWriting [
+	<gtExample>
+	^ self toString: self exampleCoordinatesGeneric
+]
+
 { #category : #'instance creation' }
 NeoJSONWriter class >> on: writeStream [
 	"Initialize on writeStream, which should be a character stream that 

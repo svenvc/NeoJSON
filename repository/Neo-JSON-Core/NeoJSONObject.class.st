@@ -46,6 +46,29 @@ Class {
 }
 
 { #category : #example }
+NeoJSONObject class >> exampleCoordinates [
+	<gtExample>
+	^ (0 to: 4) 
+		collect: [ :each | self new x: each; y: each * 2 ]
+		as: NeoJSONArray
+]
+
+{ #category : #example }
+NeoJSONObject class >> exampleCoordinatesParsing [
+	<gtExample>
+	| result |
+	result := self fromString: NeoJSONReader exampleCoordinatesJSON.
+	self assert: result equals: self exampleCoordinates.
+	^ result
+]
+
+{ #category : #example }
+NeoJSONObject class >> exampleCoordinatesWriting [
+	<gtExample>
+	^ self exampleCoordinates printString
+]
+
+{ #category : #example }
 NeoJSONObject class >> exampleMagnitudeClassHierarchy [
 	<gtExample>
 	| builder |

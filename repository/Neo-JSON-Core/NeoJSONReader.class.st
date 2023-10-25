@@ -42,6 +42,29 @@ Class {
 	#category : #'Neo-JSON-Core'
 }
 
+{ #category : #example }
+NeoJSONReader class >> exampleCoordinatesCustomParsing [
+	<gtExample>
+	| reader |
+	reader := self on: self exampleCoordinatesJSON readStream.
+	reader mapAllInstVarsFor: Point.
+	reader for: #ArrayOfPoints customDo: [ :mapping |
+		mapping listOfElementSchema: Point ].
+	^ reader nextAs: #ArrayOfPoints 
+]
+
+{ #category : #example }
+NeoJSONReader class >> exampleCoordinatesGenericParsing [
+	<gtExample>
+	^ self fromString: self exampleCoordinatesJSON
+]
+
+{ #category : #example }
+NeoJSONReader class >> exampleCoordinatesJSON [
+	<gtExample>
+	^ '[{"x":0,"y":0},{"x":1,"y":2},{"x":2,"y":4},{"x":3,"y":6},{"x":4,"y":8}]'
+]
+
 { #category : #convenience }
 NeoJSONReader class >> fromString: string [
 	^ (self on: string readStream) next
