@@ -25,9 +25,7 @@ BaselineOfNeoJSON >> baseline: spec [
 				package: 'Neo-JSON-Pharo-Core' with: [ spec requires: #('Neo-JSON-Core') ];
 				package: 'Neo-JSON-Pharo-Tests' with: [ spec requires: #('Neo-JSON-Tests') ];
 				package: 'Neo-JSON-Pharo-Examples' with: [ spec requires: #('Neo-JSON-Core') ];
-				package: 'Neo-JSON-GT' with: [ spec requires: #('Neo-JSON-Core') ];
 				group: 'core' with: #('Neo-JSON-Core' 'Neo-JSON-Pharo-Core');
 				group: 'tests' with: #('Neo-JSON-Tests' 'Neo-JSON-Pharo-Tests');
-				group: 'examples' with: #('Neo-JSON-Pharo-Examples');
-				group: 'gt' with: #('Neo-JSON-GT') ].
+				group: 'examples' with: #('Neo-JSON-Pharo-Examples') ].
 ]
