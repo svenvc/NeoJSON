@@ -37,7 +37,7 @@ The first is special because it returns nil as soon as a key is missing. The sec
 	NeoJSONObject new atPath: #(one two three) put: 42; atPath: #(one two three).
 
 The fact that I am an OrderedDictionary means to I maintain the order of keys. This is meant as a convenience feature only as the official JSON specification clearly states ""An object is an unordered set of name/value pairs"".
-
+I work together with NeoJSONArray.
 "
 Class {
 	#name : #NeoJSONObject,
@@ -198,27 +198,28 @@ NeoJSONObject >> at: key ifPresent: aPresentBlock ifAbsentPut: anAbsentBlock [
 
 { #category : #accessing }
 NeoJSONObject >> atPath: keyCollection [
-	"Use each key in keyCollection recursively, stop when nil is encountered"
+	"Use each key in keyCollection recursively, return nil when a key is missing.
+	Note how keys can also be indexes to arrays."
 
 	| value |
 	value := self.
 	keyCollection do: [ :each |
-		value := value at: each.
-		value ifNil: [ ^ nil ] ].
+		value := value at: each ifAbsent: [ ^ nil ] ].
 	^ value
 ]
 
 { #category : #accessing }
 NeoJSONObject >> atPath: keyCollection put: newValue [
-	"Use each key in keyCollection recursively, create new levels when needed"
+	"Use each key in keyCollection recursively, create new levels when needed.
+	Note how keys can also be indexes to arrays."
 
 	| target |
 	keyCollection ifEmpty: [ ^ self ].
 	target := self.
 	keyCollection allButLastDo: [ :each |
-		(target at: each)
-			ifNil: [ target := target at: each put: target species new ]
-			ifNotNil: [ :subValue | target := subValue ] ].
+		target := target 
+			at: each
+			ifAbsent: [ target at: each put: target species new ] ].
 	^ target at: keyCollection last put: newValue
 ]
 
