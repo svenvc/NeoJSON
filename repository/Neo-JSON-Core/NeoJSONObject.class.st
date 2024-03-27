@@ -148,14 +148,28 @@ NeoJSONObject class >> exampleSimpleWriting [
 ]
 
 { #category : #convenience }
-NeoJSONObject class >> fromString: string [
-	"Parse string as JSON, so that maps become instances of me"
+NeoJSONObject class >> fromStream: readStream [
+	"Parse stream as JSON, so that maps become instances of me and lists instances of NeoJSONArray"
 
-	^ (NeoJSONReader on: string readStream)
+	^ (NeoJSONReader on: readStream readStream)
 			mapClass: self;
 			listClass: NeoJSONArray;
 			propertyNamesAsSymbols: true;
 			next
+]
+
+{ #category : #convenience }
+NeoJSONObject class >> fromString: string [
+	"Parse string as JSON, so that maps become instances of me and lists instances of NeoJSONArray"
+
+	^ self fromStream: string readStream
+]
+
+{ #category : #convenience }
+NeoJSONObject class >> readFrom: readStream [
+	"Parse stream as JSON, so that maps become instances of me and lists instances of NeoJSONArray"
+
+	^ self fromStream: readStream
 ]
 
 { #category : #accessing }
