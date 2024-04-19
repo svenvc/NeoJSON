@@ -8,6 +8,23 @@ Class {
 	#category : #'Neo-JSON-Tests'
 }
 
+{ #category : #accessing }
+NeoJSONObjectTests >> exampleJSONSchema [
+	^ NeoJSONObject fromString: '{
+  "$id" : "https://example.com/schemas/address",
+  "type" : "object",
+  "properties" : {
+    "street_address" : { "$anchor" : "street_address", "type" : "string" },
+    "city" : { "type" : "string" },
+    "state" : { "type" : "string" }
+  }, 
+  "required" : ["street_address", "city", "state"],
+  "$defs" : {
+    "country" : { "type" : "object", "$anchor" : "country", "enum" : ["us","canada","gb"] }
+  }
+}'
+]
+
 { #category : #testing }
 NeoJSONObjectTests >> testAtAt [
 	| object |
@@ -84,6 +101,45 @@ NeoJSONObjectTests >> testCRUD [
 	self assert: object foo equals: nil.
 	object removeAll.
 	self assert: object isEmpty
+]
+
+{ #category : #testing }
+NeoJSONObjectTests >> testFindPath [
+	| json path |
+	json := self exampleJSONSchema.
+	
+	path := json findPath: [ :object | (object at: '$anchor') = 'street_address' ].
+	self deny: path isNil.
+	self assert: path equals: #(properties street_address).
+	self assert: ((json atPath: path) at: '$anchor') equals: 'street_address'.
+		
+	path := json findPath: [ :object | (object at: 'foo') = 'bar' ].
+	self assert: path isNil.
+	
+	path := json findPath: [ :object | (object at: '$anchor') = 'country' ].
+	self deny: path isNil.
+	self assert: path equals: #('$defs' country).
+	self assert: ((json atPath: path) at: '$anchor') equals: 'country'
+]
+
+{ #category : #testing }
+NeoJSONObjectTests >> testFindPaths [
+	| json paths |
+	json := self exampleJSONSchema.
+	
+	paths := json findPaths: [ :object | object includesKey: '$anchor' ].
+	self deny: paths isEmpty.
+	self assert: paths asArray equals: #((properties street_address) ('$defs' country)).
+	self assert: ((json atPath: paths first) at: '$anchor') equals: 'street_address'.
+	self assert: ((json atPath: paths second) at: '$anchor') equals: 'country'.
+			
+	paths := json findPaths: [ :object | (object at: 'foo') = 'bar' ].
+	self assert: paths isEmpty.
+	
+	paths := json findPaths: [ :object | object includesKey: #type ].
+	self deny: paths isEmpty.
+	paths do: [ :path |
+		self assert: (#(string object) includes: ((json atPath: path) at: #type)) ]
 ]
 
 { #category : #testing }

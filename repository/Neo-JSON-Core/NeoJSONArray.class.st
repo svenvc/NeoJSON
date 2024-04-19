@@ -71,6 +71,32 @@ NeoJSONArray >> atPath: keyCollection put: newValue [
 	^ target at: keyCollection last put: newValue
 ]
 
+{ #category : #accessing }
+NeoJSONArray >> findPath: conditionBlock [
+	"Find and return the first path to an object in the graph that I represent 
+	for which conditionBlock holds. Return nil when not found."
+
+		self doWithIndex: [ :each :index |
+		(each isCollection and: [ each isString not ]) ifTrue: [
+			(each findPath: conditionBlock) ifNotNil: [ :subPath |
+				^ { index } , subPath ] ] ].
+	^ nil
+]
+
+{ #category : #accessing }
+NeoJSONArray >> findPaths: conditionBlock [
+	"Find and return all paths to objects in the graph that I represent 
+	for which conditionBlock holds. Return an empty collection when none are found."
+
+	| found |
+	found := OrderedCollection new.	
+	self doWithIndex: [ :each :index |
+		(each isCollection and: [ each isString not ]) ifTrue: [
+			(each findPaths: conditionBlock) do: [ :subPath |
+				found add: { index } , subPath ] ] ].
+	^ found
+]
+
 { #category : #print }
 NeoJSONArray >> printOn: stream [
 	"I use my JSON representation when printing myself"

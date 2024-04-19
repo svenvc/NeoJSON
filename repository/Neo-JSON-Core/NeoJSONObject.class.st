@@ -252,6 +252,34 @@ NeoJSONObject >> doesNotUnderstand: message [
 ]
 
 { #category : #accessing }
+NeoJSONObject >> findPath: conditionBlock [
+	"Find and return the first path to an object in the graph that I represent 
+	for which conditionBlock holds. Return nil when not found."
+
+	(conditionBlock value: self) ifTrue: [ ^ #() ].
+	self keysAndValuesDo: [ :key :value |
+		(value isCollection and: [ value isString not ]) ifTrue: [
+			(value findPath: conditionBlock) ifNotNil: [ :subPath |
+				^ { key } , subPath ] ] ].
+	^ nil
+]
+
+{ #category : #accessing }
+NeoJSONObject >> findPaths: conditionBlock [
+	"Find and return all paths to objects in the graph that I represent 
+	for which conditionBlock holds. Return an empty collection when none are found."
+
+	| found |
+	found := OrderedCollection new.
+	(conditionBlock value: self) ifTrue: [ found add: #() ].
+	self keysAndValuesDo: [ :key :value |
+		(value isCollection and: [ value isString not ]) ifTrue: [
+			(value findPaths: conditionBlock) do: [ :subPath |
+				found add: { key } , subPath ] ] ].
+	^ found
+]
+
+{ #category : #accessing }
 NeoJSONObject >> name [
 	"Overwritten to make this accessor available as key"
 
