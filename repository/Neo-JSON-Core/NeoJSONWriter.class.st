@@ -267,6 +267,17 @@ NeoJSONWriter >> nextPut: anObject as: schema [
 	^ mapping writeObject: anObject on: self
 ]
 
+{ #category : #accessing }
+NeoJSONWriter >> nextPutAll: aCollection [
+	"Write a separate JSON representation of all objects in aCollection to my stream.
+	This supports Newline delimited JSON (application/x-ndjson) & JSON Lines (application/jsonl).
+	Warning: though each element is valid JSON, taken as a whole the result is non-valid JSON."
+	
+	aCollection do: [ :each |
+		self nextPut: each.
+		self newline ]
+]
+
 { #category : #'initialize-release' }
 NeoJSONWriter >> on: aWriteStream [
 	"Initialize on aWriteStream, which should be a character stream that 
