@@ -76,9 +76,11 @@ NeoJSONArray >> findPath: conditionBlock [
 	"Find and return the first path to an object in the graph that I represent 
 	for which conditionBlock holds. Return nil when not found."
 
-		self doWithIndex: [ :each :index |
-		(each isCollection and: [ each isString not ]) ifTrue: [
-			(each findPath: conditionBlock) ifNotNil: [ :subPath |
+	(conditionBlock value: self) ifTrue: [ ^ #(()) ].
+	self doWithIndex: [ :value :index |
+		(conditionBlock value: value) ifTrue: [ ^ { index } ].
+		(value isCollection and: [ value isString not ]) ifTrue: [
+			(value findPath: conditionBlock) ifNotNil: [ :subPath |
 				^ { index } , subPath ] ] ].
 	^ nil
 ]
@@ -90,9 +92,10 @@ NeoJSONArray >> findPaths: conditionBlock [
 
 	| found |
 	found := OrderedCollection new.	
-	self doWithIndex: [ :each :index |
-		(each isCollection and: [ each isString not ]) ifTrue: [
-			(each findPaths: conditionBlock) do: [ :subPath |
+	self doWithIndex: [ :value :index |
+		(conditionBlock value: value) ifTrue: [ found add: { index } ].
+		(value isCollection and: [ value isString not ]) ifTrue: [
+			(value findPaths: conditionBlock) do: [ :subPath |
 				found add: { index } , subPath ] ] ].
 	^ found
 ]
