@@ -11,7 +11,7 @@ Class {
 		'reader',
 		'writer'
 	],
-	#category : 'Neo-JSON-Core'
+	#category : #'Neo-JSON-Core'
 }
 
 { #category : #mapping }
@@ -42,7 +42,8 @@ NeoJSONCustomMapping >> identifier [
 { #category : #mapping }
 NeoJSONCustomMapping >> listOfElementSchema: elementSchema [
 	"Set the reader to a block that will create an instance of the
-	standard listClass while reading a list of elements of type elementSchema"
+	standard listClass while reading a list of elements of type elementSchema.
+	Pass down the elementSchema to the elements in the writer."
 
 	self reader: [ :jsonReader |
 		jsonReader listClass streamContents: [ :stream |
@@ -51,28 +52,32 @@ NeoJSONCustomMapping >> listOfElementSchema: elementSchema [
 				stream nextPut: element ] ] ].
 	self writer: [ :jsonWriter :list | 
 		jsonWriter writeListStreamingDo: [ :listWriter |
-			list do: [ :each | listWriter writeElement: each as: elementSchema ] ] ]
-
+			list do: [ :each |
+				listWriter writeElement: each as: elementSchema ] ] ]
 ]
 
 { #category : #mapping }
 NeoJSONCustomMapping >> listOfType: collectionClass [
 	"Set the reader to a block that will create an instance of collectionClass 
-	using #streamContents: while reading a list of elements"
+	using #streamContents: while reading a list of elements.
+	Set the writer to write the list's elements."
 
 	self reader: [ :jsonReader |
 		collectionClass streamContents: [ :stream |
 			jsonReader parseListDo: [ | element |
 				element := jsonReader next.
-				stream nextPut: element ] ] ]
-	"we do not set a writer, #neoJsonOn: should be sufficient, no element type known anyway"
-
+				stream nextPut: element ] ] ].
+	self writer: [ :jsonWriter :list | 
+		jsonWriter writeListStreamingDo: [ :listWriter |
+			list do: [ :each |
+				listWriter writeElement: each ] ] ]
 ]
 
 { #category : #mapping }
 NeoJSONCustomMapping >> listOfType: collectionClass andElementSchema: elementSchema [
 	"Set the reader to a block that will create an instance of collectionClass 
-	using #streamContents: while reading a list of elements of type elementSchema"
+	using #streamContents: while reading a list of elements of type elementSchema.
+	Pass down the elementSchema to the elements in the writer."
 
 	self reader: [ :jsonReader |
 		collectionClass streamContents: [ :stream |
