@@ -12,8 +12,7 @@ Returning NeoJSONArrays and NeoJSONObjects, simple subclasses, allows to add som
 "
 Class {
 	#name : #NeoJSONArray,
-	#superclass : #Array,
-	#type : #variable,
+	#superclass : #OrderedCollection,
 	#category : #'Neo-JSON-Core'
 }
 
@@ -21,7 +20,7 @@ Class {
 NeoJSONArray class >> exampleNumbers [
 	<gtExample>
 	| numbers |
-	numbers := self new: 128.
+	numbers := self new: 128 withAll: nil.
 	0 to: 127 do: [ :n | 
 		numbers
 			at: n + 1
@@ -44,6 +43,13 @@ NeoJSONArray class >> exampleSimple [
 	^ self withAll: { 0 . 1 . Float pi. 'string' . true . false. nil }
 ]
 
+{ #category : #adding }
+NeoJSONArray >> at: index add: object [
+	^ index = '-'
+		ifTrue: [ self addLast: object ]
+		ifFalse: [ self insert: object before: index ]
+]
+
 { #category : #accessing }
 NeoJSONArray >> atPath: keyCollection [
 	"Use each key in keyCollection recursively, return nil when a key is missing.
@@ -54,6 +60,22 @@ NeoJSONArray >> atPath: keyCollection [
 	keyCollection do: [ :each |
 		value := value at: each ifAbsent: [ ^ nil ] ].
 	^ value
+]
+
+{ #category : #adding }
+NeoJSONArray >> atPath: keyCollection add: newValue [
+	"Use each key in keyCollection recursively, create new levels when needed.
+	Note how keys can also be indexes to arrays.
+	This variant will insert/add to arrays"
+
+	| target |
+	keyCollection ifEmpty: [ ^ self ].
+	target := self.
+	keyCollection allButLastDo: [ :each |
+		target := target 
+			at: each
+			ifAbsent: [ target at: each add: target species new ] ].
+	^ target at: keyCollection last add: newValue
 ]
 
 { #category : #accessing }
@@ -110,4 +132,11 @@ NeoJSONArray >> printOn: stream [
 			stream
 				nextPutAll: ' Error printing JSON: ';
 				print: exception ]
+]
+
+{ #category : #removing }
+NeoJSONArray >> removeKey: index [
+	"Polymorphic with NeoJSONObject: remove the element at index"
+
+	^ self removeAt: index
 ]

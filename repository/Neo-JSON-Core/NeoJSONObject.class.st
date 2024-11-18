@@ -180,6 +180,11 @@ NeoJSONObject >> at: key [
 	^ self at: key ifAbsent: [ nil ]
 ]
 
+{ #category : #add }
+NeoJSONObject >> at: key add: object [
+	^ self at: key put: object
+]
+
 { #category : #'nested dictionaries' }
 NeoJSONObject >> at: firstKey at: secondKey [
 	"I return nil for missing keys.
@@ -220,6 +225,22 @@ NeoJSONObject >> atPath: keyCollection [
 	keyCollection do: [ :each |
 		value := value at: each ifAbsent: [ ^ nil ] ].
 	^ value
+]
+
+{ #category : #accessing }
+NeoJSONObject >> atPath: keyCollection add: newValue [
+	"Use each key in keyCollection recursively, create new levels when needed.
+	Note how keys can also be indexes to arrays.
+	This variant will insert/add to arrays."
+
+	| target |
+	keyCollection ifEmpty: [ ^ self ].
+	target := self.
+	keyCollection allButLastDo: [ :each |
+		target := target 
+			at: each
+			ifAbsent: [ target at: each add: target species new ] ].
+	^ target at: keyCollection last add: newValue
 ]
 
 { #category : #accessing }
@@ -309,7 +330,6 @@ NeoJSONObject >> removeAtPath: keyCollection [
 	target := self.
 	keyCollection allButLastDo: [ :each |
 		target := target at: each ifAbsent: [ ^ self ] ].
-	"todo: fix this for arrays"
 	^ target removeKey: keyCollection last
 ]
 
