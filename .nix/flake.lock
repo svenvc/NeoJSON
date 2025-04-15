@@ -1,0 +1,85 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1652776076,
+        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "ref": "v1.0.0",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1652776076,
+        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "ref": "v1.0.0",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1744664988,
+        "narHash": "sha256-tv5QkwoHUT7957XYPOWpyBD440SdfPBPBVymbXlmqsc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "eff64d6c1a13c9a3348f332f75cbde1935dc3d21",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "pharo-vm-12": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pharo-vm",
+        "lastModified": 1744567847,
+        "narHash": "sha256-Am5h1E69nFUdjD+XDFRw7wB3Lr2k2bxrRKygy96LJCA=",
+        "owner": "rydnr",
+        "repo": "nix-flakes",
+        "rev": "6369c686e0d7d974e0de93685bd4b16615bb5113",
+        "type": "github"
+      },
+      "original": {
+        "dir": "pharo-vm",
+        "owner": "rydnr",
+        "ref": "pharo-vm-12.0.1519.2",
+        "repo": "nix-flakes",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "pharo-vm-12": "pharo-vm-12"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
